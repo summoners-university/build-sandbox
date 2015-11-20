@@ -1,0 +1,37 @@
+$height = 60px
+$color = #60ab59
+
+.header
+    background $color
+    box-shadow 0 1px 3px rgba(#000, .3)
+    color #fff
+    height $height
+
+    &:after
+        content ''
+        display block
+        clear both
+
+    .page-title
+        line-height $height
+        margin-left .5em
+        font-size 28px
+        float left
+
+    .tabs
+        float right
+
+        a
+            height $height
+            line-height $height
+            padding 0 1em
+            text-decoration none
+            color #f8f8f8
+            cursor pointer
+            background $color
+            display inline-block
+            transition background .2s ease-in-out, color
+
+            &:hover, &.active
+                background darken($color, 20%)
+                color #fff

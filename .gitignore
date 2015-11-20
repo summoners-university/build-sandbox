@@ -1,0 +1,7 @@
+*.iml
+.idea
+.DS_STORE
+bower_components
+node_modules
+dist
+npm-debug.log

@@ -1,0 +1,39 @@
+{
+  "name": "summoners-university",
+  "version": "0.0.1",
+  "description": "Client app for Summoner's University",
+  "scripts": {
+    "postinstall": "bower install",
+    "build": "NODE_PATH=../shared:source gulp compile",
+    "build-source": "NODE_PATH=../shared:source gulp compile-source",
+    "build-watch": "NODE_PATH=../shared:source gulp compile-watch",
+    "server": "gulp server",
+    "start": "NODE_PATH=../shared:source gulp"
+  },
+  "devDependencies": {
+    "babel": "^5.8.21",
+    "babelify": "^6.1.2",
+    "bower-main-files": "0.0.4",
+    "browserify": "^7.0.3",
+    "classnames": "^2.2.0",
+    "express": "^4.13.3",
+    "gulp": "^3.8.10",
+    "gulp-inject": "^3.0.0",
+    "gulp-stylus": "^2.1.0",
+    "gulp-sync": "^0.1.4",
+    "history": "^1.13.0",
+    "main-bower-files": "^2.9.0",
+    "material-ui": "^0.13.1",
+    "morgan": "^1.6.1",
+    "react": "^0.14.2",
+    "react-addons-create-fragment": "^0.14.2",
+    "react-addons-pure-render-mixin": "^0.14.2",
+    "react-addons-transition-group": "^0.14.2",
+    "react-addons-update": "^0.14.2",
+    "react-dom": "^0.14.2",
+    "react-router": "^1.0.0",
+    "react-tap-event-plugin": "^0.2.1",
+    "stream-series": "^0.1.1",
+    "vinyl-source-stream": "^1.0.0"
+  }
+}

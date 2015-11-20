@@ -1,0 +1,13 @@
+{
+    "name": "summoners-university",
+    "version": "0.0.1",
+    "description": "Client app for Summoner's University",
+    "dependencies": {
+        "reset-css": "~2.0.2011012602"
+    },
+    "overrides": {
+        "reset-css": {
+            "main": "reset.css"
+        }
+    }
+}
