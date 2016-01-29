@@ -1,0 +1,27 @@
+.rune-filter-container
+    button
+        position absolute
+        top 1em
+        right 1em
+
+.rune-filter
+    position absolute
+    top 2.5em
+    right 1em
+    display none
+    background $grey-2
+    border 1px solid $grey-4
+
+    &.hidden
+        opacity 0
+
+    &.visible
+        display block
+        opacity 1
+
+    .option
+        padding .25em 1em
+        cursor pointer
+
+        &:hover, &.active
+            background $grey-3

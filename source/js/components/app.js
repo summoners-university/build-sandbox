@@ -1,7 +1,8 @@
 import React from 'react';
 import R, { Router, Route, IndexRoute } from 'react-router';
 import Header from 'components/header';
-import RunePage from 'components/page-runes';
+
+import RunePage from 'pages/runepage';
 
 export default class App extends React.Component {
     render() {
@@ -11,7 +12,7 @@ export default class App extends React.Component {
 
                 <main id="main">
                     <Router>
-                        <Route path="recipes" component={RunePage} />
+                        <Route path="runes" component={RunePage} />
 
                         <Router path="*" component={class Default extends React.Component {
                             render() {

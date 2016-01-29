@@ -1,41 +1,55 @@
 import gulp from 'gulp';
-import babelify from 'babelify';
 import gulpsync from 'gulp-sync';
 let sync = gulpsync(gulp).sync;
 
-function task(name, args) {
+function recipe(name, args) {
     return require('./recipes/'+name)(args);
 }
 
-let vendor_modules = ['react', 'react-dom', 'material-ui', 'react-router', 'history', 'classnames'];
+const VENDOR_MODULES = [
+    'lodash',
+    'react',
+    'react-dom',
+    'material-ui',
+    'react-router',
+    'history',
+    'classnames'
+];
 
-gulp.task('css', task('stylus', {
-    input: './source/**/*.styl',
-    output: './dist/css',
-    name: 'source.css',
-    include: [ process.cwd() + '/source/includes/include' ]
+gulp.task('env', recipe('env', {
+    NODE_PATH: 'source/js'
 }));
 
-gulp.task('js:node_modules', task('browserify', {
+gulp.task('css', recipe('stylus', {
+    input: [
+        './source/css/index.styl'
+    ],
+    output: './dist/css',
+    name: 'source.css'
+}));
+
+gulp.task('js:node_modules', recipe('browserify', {
     input: '',
-    require: vendor_modules,
+    require: VENDOR_MODULES,
     output: './dist/node_modules',
     name: 'vendor.js'
 }));
 
-gulp.task('js:source', task('browserify', {
-    input: './source/index.js',
-    external: vendor_modules,
+gulp.task('js:source', recipe('babelify', {
+    input: './source/js/index.js',
+    external: VENDOR_MODULES,
     output: './dist/js',
     name: 'source.js',
-    transform: babelify.configure({stage: 1})
+    transform: {
+        stage: 1
+    }
 }));
 
-gulp.task('bower', task('bower', {
+gulp.task('bower', recipe('bower', {
     output: './dist/bower_components'
 }));
 
-gulp.task('inject', task('inject', {
+gulp.task('inject', recipe('inject', {
     cwd: './dist',
     file: './static/**/*.html',
     sources: [[
@@ -48,7 +62,7 @@ gulp.task('inject', task('inject', {
     output: './dist'
 }));
 
-gulp.task('server', task('server', {
+gulp.task('server', recipe('server', {
     source: './dist',
     port: 3000
 }));
@@ -61,6 +75,6 @@ gulp.task('watch', () => {
 
 gulp.task('compile-vendor', ['bower', 'js:node_modules']);
 gulp.task('compile-source', ['js:source', 'css']);
-gulp.task('compile', sync(['compile-source', 'compile-vendor', 'inject']) );
+gulp.task('compile', sync(['env', 'compile-source', 'compile-vendor', 'inject']) );
 gulp.task('compile-watch', ['compile', 'watch']);
 gulp.task('default', ['compile-watch', 'server']);

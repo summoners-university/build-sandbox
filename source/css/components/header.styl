@@ -1,11 +1,10 @@
-$height = 60px
-$color = #60ab59
+$header-height = 60px
 
 .header
-    background $color
+    background $grey-2
     box-shadow 0 1px 3px rgba(#000, .3)
     color #fff
-    height $height
+    height $header-height
 
     &:after
         content ''
@@ -13,7 +12,7 @@ $color = #60ab59
         clear both
 
     .page-title
-        line-height $height
+        line-height $header-height
         margin-left .5em
         font-size 28px
         float left
@@ -22,16 +21,15 @@ $color = #60ab59
         float right
 
         a
-            height $height
-            line-height $height
+            height $header-height
+            line-height $header-height
             padding 0 1em
             text-decoration none
-            color #f8f8f8
+            color $color-primary-light
             cursor pointer
-            background $color
+            background $header-height
             display inline-block
             transition background .2s ease-in-out, color
 
-            &:hover, &.active
-                background darken($color, 20%)
-                color #fff
+            &:hover
+                color darken($color-primary-light, 10%)

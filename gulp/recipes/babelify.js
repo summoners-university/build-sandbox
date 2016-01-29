@@ -2,6 +2,7 @@ import gulp from 'gulp';
 import gutil from 'gulp-util';
 import chalk from 'chalk';
 import browserify from 'browserify';
+import babelify from 'babelify';
 import source from 'vinyl-source-stream';
 
 function logError(err) {
@@ -29,7 +30,7 @@ module.exports = function(config) {
         var b = browserify(config.input);
 
         if(config.transform) {
-            b.transform(config.transform);
+            b.transform(babelify.configure(config.transform));
         }
 
         if(config.require) {
