@@ -1,8 +1,8 @@
 const TARGET_ENV = 'production';
 
 const gulp = require('gulp');
-const CONFIG = require('./gulp/config')(TARGET_ENV);
-var recipe = (name, config) => require('./gulp/recipes/' + name)(config);
+const CONFIG = require('./config')(TARGET_ENV);
+var recipe = (name, config) => require('./recipes/' + name)(config);
 
 const build = require('../dist/build.json');
 
