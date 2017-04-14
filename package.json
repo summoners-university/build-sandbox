@@ -6,6 +6,8 @@
   "scripts": {
     "postinstall": "bower install",
     "build": "gulp compile",
+    "build-alpha": "TARGET_ENV=alpha gulp compile",
+    "build-prod": "TARGET_ENV=production gulp compile",
     "build-source": "gulp compile-source",
     "build-watch": "gulp compile-watch",
     "server": "gulp server",
