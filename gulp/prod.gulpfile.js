@@ -10,8 +10,8 @@ var recipe = (name, config) => require('./recipes/' + name)(config);
 
 const build = require('../dist/build.json');
 
-if(build.target != TARGET_ENV) {
-    throw `Cannot serve build ${build.target} to environment ${TARGET_ENV}`;
+if(build.target != CURRENT_ENV) {
+    throw `Cannot serve build ${build.target} to environment ${CURRENT_ENV}`;
 }
 
 gulp.task('server', recipe('server', {
