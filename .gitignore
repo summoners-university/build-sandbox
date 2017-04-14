@@ -1,7 +1,6 @@
 *.iml
 .idea
 .DS_STORE
-bower_components
-node_modules
-dist
+/bower_components
+/node_modules
 npm-debug.log
