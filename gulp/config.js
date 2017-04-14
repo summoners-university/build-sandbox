@@ -1,13 +1,15 @@
 const EnvConfig = {
   SENTRY: {
     local: 'https://1aa30050674f428a9d48cda3f6689561@sentry.io/157613',
-    staging: 'https://2159d482fde040bb958212cd9fba8e86@sentry.io/158023',
-    prod: 'https://1544f77b023141678624b80c1c4110e6@sentry.io/157612'
+    staging: 'https://98de5dacdaf54adfa6f76edc967c23b7@sentry.io/158403',
+    alpha: 'https://2159d482fde040bb958212cd9fba8e86@sentry.io/158023',
+    production: 'https://1544f77b023141678624b80c1c4110e6@sentry.io/157612'
   },
   GA: {
-    local: 'UA-97028744-3',
-    staging: 'UA-97028744-2',
-    prod: 'UA-97028744-1'
+    local: 'UA-97028744-4',
+    staging: 'UA-97028744-3',
+    alpha: 'UA-97028744-2',
+    production: 'UA-97028744-1'
   }
 };
 
