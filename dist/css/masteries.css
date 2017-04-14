@@ -1,0 +1,162 @@
+
+.su-masteries-app {
+  flex-grow: 1;
+  margin-right: 5px;
+}
+.su-masteries-app .su-pane-body {
+  flex-direction: row;
+}
+
+.su-masteries-talent-container {
+  position: absolute;
+}
+.su-masteries-talent {
+  background-color: #000;
+  background-repeat: no-repeat;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  box-sizing: content-box;
+  cursor: pointer;
+  height: 48px;
+  position: absolute;
+  transform: scale(1.05);
+  width: 48px;
+}
+.su-masteries-talent .points {
+  background: #333;
+  border: 2px solid;
+  border-radius: 3px;
+  bottom: -5px;
+  color: #ccc;
+  font-size: 10px;
+  line-height: 14px;
+  position: absolute;
+  padding: 0 5px;
+  transition: 0.3s ease-in-out;
+  right: -5px;
+  z-index: 5;
+}
+.su-masteries-talent .bg {
+  height: 48px;
+  width: 48px;
+  position: absolute;
+  transition: 0.3s ease-in-out;
+  border-radius: 3px;
+}
+.su-masteries-talent.unavailable .bg {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+  transition: 0.3s ease-in-out;
+}
+.su-masteries-talent.unavailable .points {
+  opacity: 0;
+}
+.su-masteries-talent.partial {
+  border-color: #3c3;
+}
+.su-masteries-talent.partial .points {
+  color: #3c3;
+}
+.su-masteries-talent.complete {
+  border-color: #cc3;
+}
+.su-masteries-talent.complete .points,
+.su-masteries-talent.complete .talent-tooltip .rank {
+  color: #cc3;
+}
+
+.su-masteries-tooltip {
+  display: none;
+  width: 300px;
+  background: #111;
+  color: #eee;
+  border: 2px solid;
+  border-radius: 3px;
+  padding: 5px;
+  z-index: 100;
+  position: relative;
+  left: 65px;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+.su-masteries-tooltip.small {
+  width: 225px;
+}
+.su-masteries-tooltip.x-small {
+  width: 180px;
+}
+.su-masteries-tooltip .name {
+  display: block;
+}
+.su-masteries-tooltip .rank {
+  display: block;
+  margin-bottom: 10px;
+  color: #3c3;
+}
+.su-masteries-tooltip .desc {
+  color: #ccc;
+}
+.su-masteries-tooltip .desc .spell {
+  color: #ca3;
+}
+.su-masteries-tooltip hr {
+  height: 2px;
+  border: none;
+  width: 90%;
+  margin: 10px 0;
+  background: -moz-linear-gradient(left, rgba(204,204,204,0) 0%, rgba(204,204,204,0.8) 11%, #ccc 50%, rgba(204,204,204,0.8) 90%, rgba(204,204,204,0) 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(204,204,204,0)), color-stop(11%, rgba(204,204,204,0.8)), color-stop(50%, #ccc), color-stop(90%, rgba(204,204,204,0.8)), color-stop(100%, rgba(204,204,204,0)));
+  background: -webkit-linear-gradient(left, rgba(204,204,204,0) 0%, rgba(204,204,204,0.8) 11%, #ccc 50%, rgba(204,204,204,0.8) 90%, rgba(204,204,204,0) 100%);
+  background: -o-linear-gradient(left, rgba(204,204,204,0) 0%, rgba(204,204,204,0.8) 11%, #ccc 50%, rgba(204,204,204,0.8) 90%, rgba(204,204,204,0) 100%);
+  background: -ms-linear-gradient(left, rgba(204,204,204,0) 0%, rgba(204,204,204,0.8) 11%, #ccc 50%, rgba(204,204,204,0.8) 90%, rgba(204,204,204,0) 100%);
+  background: linear-gradient(to right, rgba(204,204,204,0) 0%, rgba(204,204,204,0.8) 11%, #ccc 50%, rgba(204,204,204,0.8) 90%, rgba(204,204,204,0) 100%);
+  -webkit-filter: "progid:DXImageTransform.Microsoft.gradient( startColorstr='#00cccccc', endColorstr='#00cccccc',GradientType=1 )";
+  filter: "progid:DXImageTransform.Microsoft.gradient( startColorstr='#00cccccc', endColorstr='#00cccccc',GradientType=1 )";
+}
+.su-masteries-tooltip h4 {
+  font-size: 12px;
+  margin: 0;
+}
+.su-masteries-talent-container:hover .su-masteries-tooltip {
+  display: block;
+}
+
+.su-masteries-tree {
+  position: relative;
+  flex-grow: 1;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.su-masteries-tree.ferocity {
+  background-image: url("/images/masteries/ferocity-bg.jpg");
+}
+.su-masteries-tree.cunning {
+  background-image: url("/images/masteries/cunning-bg.jpg");
+}
+.su-masteries-tree.resolve {
+  background-image: url("/images/masteries/resolve-bg.jpg");
+}
+.su-masteries-tree .meta {
+  bottom: 1em;
+  display: block;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+.su-masteries-tree .meta .name {
+  color: rgba(255,255,255,0.75);
+}
+.su-masteries-tree .meta .points {
+  color: rgba(204,204,204,0.75);
+  margin-left: 0.5em;
+}
+.su-masteries-tree .meta .points:before {
+  content: '(';
+}
+.su-masteries-tree .meta .points:after {
+  content: ')';
+}

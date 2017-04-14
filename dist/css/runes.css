@@ -1,0 +1,222 @@
+
+.su-runes-app {
+  display: flex;
+  flex: 1;
+}
+.su-runes-app .su-runes-list {
+  width: 225px;
+}
+.su-runes-app .su-runes-page {
+  flex: 1;
+  margin: 0 5px;
+}
+
+.su-runes-list .vertical-scroll-container {
+  flex-grow: 1;
+  overflox-x: visible;
+  overflow-y: scroll;
+}
+.su-runes-list .rune-group {
+  display: block;
+}
+.su-runes-list .rune-group .rune-group-header {
+  background: url("/images/runes/group-header.png") no-repeat left top;
+  cursor: pointer;
+  display: block;
+  height: 28px;
+  width: 100%;
+}
+.su-runes-list .rune-group .rune-group-header .rune-group-name {
+  color: #fff;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 28px;
+  opacity: 0.9;
+  padding: 0 2em;
+}
+.su-runes-list .rune-group .rune-group-header .rune-group-name.marks {
+  color: #e61919;
+}
+.su-runes-list .rune-group .rune-group-header .rune-group-name.seals {
+  color: #cdcd00;
+}
+.su-runes-list .rune-group .rune-group-header .rune-group-name.glyphs {
+  color: #46a2ec;
+}
+.su-runes-list .rune-group .rune-group-header .rune-group-name.quintessences {
+  color: #9c50e7;
+}
+.su-runes-list .rune-group .rune-group-header:hover .rune-group-name {
+  opacity: 1;
+}
+.su-runes-list .rune-group .rune-group-runes {
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+.su-runes-list .rune-group.expanded .rune-group-header {
+  background-position: left bottom;
+}
+.su-runes-list .rune-group.expanded .rune-group-runes {
+  height: auto;
+}
+
+.list-rune {
+  height: 40px;
+  width: 100%;
+  font-size: 12px;
+  margin: 2px auto;
+  border: 1px solid #9d8035;
+  background-color: #f1ead4;
+  background-image: -moz-linear-gradient(#f1ead4, #decd9c);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f1ead4), to(#decd9c));
+  background-image: -webkit-linear-gradient(#f1ead4, #decd9c);
+  background-image: -o-linear-gradient(#f1ead4, #decd9c);
+  cursor: pointer;
+  position: relative;
+  display: block;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.list-rune.mark .icon {
+  background-image: url("/images/runes/marks-sprite.png");
+}
+.list-rune.seal .icon {
+  background-image: url("/images/runes/seals-sprite.png");
+}
+.list-rune.glyph .icon {
+  background-image: url("/images/runes/glyphs-sprite.png");
+}
+.list-rune.quintessence .icon {
+  background-image: url("/images/runes/quints-sprite.png");
+  height: 33px;
+}
+.list-rune .icon {
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: cover;
+  height: 35px;
+  margin-left: 0.5em;
+  width: 32px;
+  vertical-align: middle;
+}
+.list-rune .name {
+  margin-left: 0.5em;
+  line-height: 40px;
+  font-weight: bold;
+  vertical-align: middle;
+}
+.list-rune .cost {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  font-size: 10px;
+  line-height: 1em;
+  font-weight: 500;
+  color: #654;
+}
+.list-rune .quantity {
+  position: absolute;
+  bottom: 3px;
+  right: 4px;
+  font-size: 10px;
+  line-height: 1em;
+  font-weight: 500;
+  color: #654;
+}
+
+.su-runes-page .runepage {
+  background: url("/images/runes/runepage-bg.jpg") no-repeat left top;
+  display: block;
+  flex: 1;
+  position: relative;
+}
+.su-runes-page .runepage .rune {
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: cover;
+  height: 55px;
+  width: 49px;
+  vertical-align: middle;
+  position: absolute;
+}
+.su-runes-page .runepage .rune.mark {
+  background-image: url("/images/runes/marks-sprite.png");
+}
+.su-runes-page .runepage .rune.seal {
+  background-image: url("/images/runes/seals-sprite.png");
+}
+.su-runes-page .runepage .rune.glyph {
+  background-image: url("/images/runes/glyphs-sprite.png");
+}
+.su-runes-page .runepage .rune.quintessence {
+  background-image: url("/images/runes/quints-sprite.png");
+  width: 100px;
+  height: 100px;
+}
+
+.rune-tooltip {
+  display: none;
+  pointer-events: none;
+  position: absolute;
+  left: 54px;
+  background: #000;
+  border-radius: 5px;
+  border: 2px solid #666;
+  white-space: nowrap;
+  text-align: center;
+  padding: 5px;
+  font-size: 12px;
+  z-index: 10;
+}
+.rune:hover .rune-tooltip {
+  display: block;
+}
+.rune-tooltip.active {
+  display: block;
+  position: fixed;
+}
+.rune-tooltip .tier {
+  float: left;
+  color: #f26900;
+}
+.rune-tooltip .rank {
+  float: right;
+  display: none;
+}
+.rune-tooltip > .name {
+  margin: 2em 1em 1em;
+  clear: both;
+  font-size: 14px;
+  font-weight: bold;
+  display: block;
+  line-height: 1;
+}
+.rune-tooltip .description {
+  margin: 0 1em 1em;
+  color: #fff;
+}
+.rune-tooltip .cost {
+  color: #ddd;
+  bottom: 3px;
+  right: 5px;
+  position: absolute;
+  line-height: 1em;
+  display: none;
+}
+.list-rune .rune-tooltip .cost {
+  display: inline-block;
+}
+.rune-tooltip.mark {
+  color: #e61919;
+}
+.rune-tooltip.seal {
+  color: #cdcd00;
+}
+.rune-tooltip.glyph {
+  color: #46a2ec;
+}
+.rune-tooltip.quintessence {
+  color: #9c50e7;
+}

@@ -1,0 +1,90 @@
+
+.su-champions-card {
+  background: #736945;
+  border: 1px solid #8e7f3f;
+  border-radius: 3px;
+  cursor: pointer;
+  margin: 0.5em;
+  vertical-align: top;
+  width: calc(20% - 1em);
+}
+.su-champions-card:hover,
+.su-champions-card.active {
+  border: 1px solid #a39248;
+}
+.su-champions-card:hover .su-champions-card-body,
+.su-champions-card.active .su-champions-card-body {
+  background: rgba(17,26,21,0.75);
+}
+.su-champions-card .su-champions-card-header {
+  background: #f0e4b1;
+  border-bottom: 1px solid #8e7f3f;
+  box-sizing: content-box;
+  display: block;
+  height: 24px;
+  padding: 0.5em;
+}
+.su-champions-card .su-champions-card-header .name {
+  line-height: 24px;
+  vertical-align: top;
+}
+.su-champions-card .su-champions-card-header .icon {
+  height: 48px;
+  margin: -12px;
+  margin-right: -4px;
+  transform: scale(0.5);
+  width: 48px;
+}
+.su-champions-card .su-champions-card-body {
+  background: rgba(17,26,21,0.5);
+  padding-left: 0.25em;
+}
+.su-champions-card .stat {
+  width: 50%;
+  margin: 0.25em 0;
+}
+.su-champions-card .stat.missing {
+  visibility: hidden;
+}
+.su-champions-card .stat .icon {
+  background-repeat: no-repeat;
+  background-size: initial;
+  height: 20px;
+  vertical-align: middle;
+  width: 20px;
+}
+.su-champions-card .stat .value {
+  color: #cbcbcb;
+  font-size: 14px;
+  margin-left: 0.25em;
+  vertical-align: middle;
+}
+.su-champions-card .stat .value.base {
+  line-height: 20px;
+  text-indent: 0.25em;
+}
+.su-champions-card .stat .value.scaling {
+  display: block;
+  font-size: 12px;
+  line-height: 1;
+  margin-top: -3px;
+  text-indent: 2em;
+}
+
+.su-champions-app {
+  flex-grow: 1;
+  margin-right: 5px;
+}
+
+.su-champions-grid {
+  opacity: 1;
+}
+.su-champions-grid .empty-message {
+  align-items: center;
+  color: #cbcbcb;
+  display: flex;
+  flex-direction: row;
+  height: 140px;
+  justify-content: center;
+  text-align: center;
+}

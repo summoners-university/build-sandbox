@@ -1,0 +1,9 @@
+angular.module('stats.templates', []).run(['$templateCache', function($templateCache) {
+    $templateCache.put('stats/components/app/template.html', '<div class="su-stats-app su-pane"><div class="su-pane-header"><span class="su-pane-title">Stats</span><ul class="su-actions"><li ng-click="ctrl.levelDropdownExpanded = !ctrl.levelDropdownExpanded" class="su-action arrow-after"><i class="level">Level {{ctrl.level}}<div ng-class="{ expanded: ctrl.levelDropdownExpanded, collapsed: !ctrl.levelDropdownExpanded }" class="dropdown dropdown-list"><div ng-repeat="level in ctrl.levels" ng-click="ctrl.updateLevel(level)" ng-class="{ active: ctrl.level == level }" class="dropdown-list-item">Level {{level}}</div></div></i></li></ul><!--span.su-pane-champion-level--><!--| Level--><!--select(ng-model="ctrl.level", ng-options="level for level in ctrl.levels track by level", ng-change="ctrl.updateLevel(ctrl.level)")--></div><div class="su-pane-body empty"><su-stats-mod-list></su-stats-mod-list><su-stats-stat-grid></su-stats-stat-grid></div></div>');
+
+    $templateCache.put('stats/components/mod-list/template.html', '<div class="su-stats-mod-list scroll-fade-container"><div class="mods vertical-scroll-container"><div ng-repeat="mod in ctrl.mods" class="mod"><div class="stat">{{ mod | stat:\'name\' }}</div><div class="value">{{ mod | stat:\'value\' }}</div></div></div></div>');
+
+    $templateCache.put('stats/components/stat/template.html', '<div ng-class="{ missing: !stat, touched: stat.touched }" class="su-stats-stat"><div ng-style="stat | statIcon" class="icon"></div><div class="value">{{ stat | statValue }}</div></div>');
+
+    $templateCache.put('stats/components/stat-grid/template.html', '<div class="su-stats-stat-grid"><div class="stats"><su-stats-stat ng-repeat="(key, stat) in ctrl.stats" stat="stat"></su-stats-stat></div></div>');
+}])
