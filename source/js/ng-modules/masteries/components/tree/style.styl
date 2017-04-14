@@ -1,0 +1,38 @@
+.su-masteries-tree
+    position relative
+    flex-grow 1
+    background-position center center
+    background-repeat no-repeat
+    background-size cover
+
+    &.ferocity
+        background-image url(/images/masteries/ferocity-bg.jpg)
+
+    &.cunning
+        background-image url(/images/masteries/cunning-bg.jpg)
+
+    &.resolve
+        background-image url(/images/masteries/resolve-bg.jpg)
+
+    .meta
+        bottom 1em
+        display block
+        font-size 14px
+        letter-spacing .5px
+        position absolute
+        text-align center
+        text-transform uppercase
+        width 100%
+
+        .name
+            color rgba(#fff, .75)
+        
+        .points
+            color rgba(#ccc, .75)
+            margin-left .5em
+
+            &:before
+                content '('
+
+            &:after
+                content ')'

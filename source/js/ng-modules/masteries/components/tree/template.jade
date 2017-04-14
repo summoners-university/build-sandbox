@@ -1,0 +1,6 @@
+.su-masteries-tree(class="{{ tree.name | lowercase }}")
+    .talent-container
+        su-masteries-talent(ng-repeat="talent in tree.talents track by $index", talent="talent", tree="tree")
+    .meta
+        span.name {{ tree.name }}
+        span.points {{ tree.points }}

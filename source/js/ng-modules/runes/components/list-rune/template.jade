@@ -1,0 +1,13 @@
+li.list-rune.rune(class="{{rune.type | lowercase}}",
+    ng-click="ctrl.select($event, rune)",
+    ng-mouseenter="ctrl.showTooltip($event, rune)",
+    ng-mouseleave="ctrl.hideTooltip($event, rune)"
+)
+    //- su-rclick="select($event, rune)",
+    //- ng-show="rune.quantity > 0 && rune.show == true"
+    //- span.icon(ng-style='rune | runeStyles')
+    span.icon
+    span.name {{ rune | brief }}
+    span.cost {{ rune.cost }} IP
+    span.quantity x{{ rune.quantity }}
+    su-runes-tooltip(rune="rune")

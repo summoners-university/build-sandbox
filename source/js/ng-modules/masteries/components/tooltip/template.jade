@@ -1,0 +1,7 @@
+.su-masteries-tooltip(ng-class="{ 'x-small': talent.description[talent.points].length < 30 }")
+    span.name {{talent.name}}
+    span.rank Rank: {{talent.points}} / {{talent.ranks}}
+    span.desc(ng-bind-html="talent.description[talent.points - 1] | sanitize", ng-show="talent.points > 0")
+    hr(ng-show='talent.points > 0 && talent.points < talent.ranks')
+    h4(ng-show='talent.points > 0 && talent.points < talent.ranks') Next Rank:
+    span.desc(ng-bind-html="talent.description[talent.points] | sanitize" ng-show='talent.points < talent.ranks')

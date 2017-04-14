@@ -1,0 +1,11 @@
+.su-champions-grid
+
+    .su-champions-card(ng-click="ctrl.select(null)", ng-class="{ 'active': currentChampion == null }")
+        .su-champions-card-header
+            .img
+            span.name No Champion
+        .su-champions-card-body
+            .empty-message
+                p Select this to use no champion data for your build.
+
+    su-champions-card(ng-repeat="(id, champion) in champions", champion="champion", ng-class="{ 'active': currentChampion == champion }")

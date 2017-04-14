@@ -1,0 +1,46 @@
+$stat-bg = #111a15
+$stat-border-inner = #091310
+$stat-border-outer = #9a9455
+$stat-separator-top = #182c29
+$stat-separator-bottom = #080c08
+
+$stat-untouched = #cbcbcb
+$stat-touched = #ede68f
+$stat-icon-bg = #000
+$stat-icon-border = #295552
+
+.su-stats-stat
+    background $stat-bg
+    margin .25em 0
+    width 50%
+
+    &.missing
+        visibility hidden
+
+    &.touched .value
+        color $stat-touched
+
+    .icon
+        background-repeat no-repeat
+        background-size initial
+        height 20px
+        vertical-align middle
+        width 20px
+
+    .value
+        color $stat-untouched
+        font-size 14px
+        font-weight 600
+        margin-left .25em
+        vertical-align middle
+
+        &.base
+            line-height 20px
+            text-indent .25em
+
+        &.scaling
+            display block
+            font-size 12px
+            line-height 1
+            margin-top -3px
+            text-indent 2em

@@ -1,0 +1,9 @@
+.su-masteries-talent-container(ng-style="talent | style:tree")
+    .su-masteries-talent(
+        class="{{ talent | classname:tree }}"
+        ng-click="ctrl.spend($event, talent)"
+        su-rclick="ctrl.refund($event, talent)"
+    )
+        .bg(ng-style="talent | sprite")
+        span.points {{ talent.points }} / {{ talent.ranks }}
+    su-masteries-tooltip(talent="talent")

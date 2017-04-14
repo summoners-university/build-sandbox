@@ -1,10 +1,12 @@
-import gulp from 'gulp';
-import stylus from 'gulp-stylus';
+const gulp = require('gulp');
+const stylus = require('gulp-stylus');
+const concat = require('gulp-concat');
 
-export default (config) => {
+module.exports = (config) => {
     return () => {
-        return gulp.src(config.input)
-            .pipe(stylus({ 'import': config.include || [] }))
-            .pipe(gulp.dest(config.output));
+      return gulp.src(config.input)
+        .pipe(stylus({ 'import': config.include || [] }))
+        .pipe(concat(config.name))
+        .pipe(gulp.dest(config.output));
     };
 };

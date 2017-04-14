@@ -1,0 +1,10 @@
+.su-runes-list.su-pane
+    .su-pane-header
+        span.su-pane-title Runes
+    .su-pane-body.empty
+        .vertical-scroll-container
+            .rune-group(ng-repeat="group in ctrl.groups", class="{{group.expanded ? 'expanded' : 'collapsed'}}")
+                .rune-group-header(ng-click="ctrl.toggle($event, group)")
+                    span.rune-group-name(class="{{group.name | lowercase}}") {{ group.name }}
+                ul.rune-group-runes
+                    su-runes-list-rune(ng-repeat="rune in ctrl.runes[group.name]", rune="rune")

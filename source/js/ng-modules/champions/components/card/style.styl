@@ -1,0 +1,84 @@
+$stat-bg = #111a15
+$stat-border-inner = #091310
+$stat-border-outer = #9a9455
+$stat-separator-top = #182c29
+$stat-separator-bottom = #080c08
+
+$champ-container-bg = #c3a967
+$champ-border = #524629
+$champ-ribbon-bg = #5b482a
+
+$stat-untouched = #cbcbcb
+$stat-touched = #ede68f
+$stat-icon-bg = #000
+$stat-icon-border = #295552
+
+
+.su-champions-card
+    background #736945
+    border 1px solid #8e7f3f
+    border-radius 3px
+    cursor pointer
+    margin .5em
+    vertical-align top
+    width calc(20% - 1em)
+
+    &:hover, &.active
+        border 1px solid lighten(#8e7f3f, 10%)
+
+        .su-champions-card-body
+            background rgba($stat-bg, .75)
+
+    .su-champions-card-header
+        background #f0e4b1
+        border-bottom 1px solid #8e7f3f
+        box-sizing content-box
+        display block
+        height 24px
+        padding .5em
+
+        .name
+            line-height 24px
+            vertical-align top
+
+        .icon
+            height 48px
+            margin -12px
+            margin-right -4px
+            transform scale(.5)
+            width 48px
+
+    .su-champions-card-body
+        background rgba($stat-bg, .5)
+        padding-left .25em
+
+    .stat
+        width 50%
+        margin .25em 0
+
+        &.missing
+            visibility hidden
+
+        .icon
+            background-repeat no-repeat
+            background-size initial
+            height 20px
+            vertical-align middle
+            width 20px
+
+        .value
+            color $stat-untouched
+            font-size 14px
+            margin-left .25em
+            vertical-align middle
+
+            &.base
+                line-height 20px
+                text-indent .25em
+
+            &.scaling
+                display block
+                font-size 12px
+                line-height 1
+                margin-top -3px
+                text-indent 2em

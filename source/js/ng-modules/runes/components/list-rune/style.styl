@@ -1,0 +1,66 @@
+.list-rune
+    height 40px
+    width 100%
+    font-size 12px
+    margin 2px auto
+    border 1px solid #9d8035
+    background-color #f1ead4
+    background-image -moz-linear-gradient(#f1ead4, #decd9c)
+    background-image -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f1ead4), to(#decd9c))
+    background-image -webkit-linear-gradient(#f1ead4, #decd9c)
+    background-image -o-linear-gradient(#f1ead4, #decd9c)
+    cursor pointer
+    position relative
+    display block
+    white-space nowrap
+    user-select none
+
+    &.mark
+        .icon
+            background-image url(/images/runes/marks-sprite.png)
+
+    &.seal
+        .icon
+            background-image url(/images/runes/seals-sprite.png)
+
+    &.glyph
+        .icon
+            background-image url(/images/runes/glyphs-sprite.png)
+
+    &.quintessence
+        .icon
+            background-image url(/images/runes/quints-sprite.png)
+            height 33px
+
+    .icon
+        background-repeat no-repeat
+        background-position top left
+        background-size cover
+        height 35px
+        margin-left .5em
+        width 32px
+        vertical-align middle
+
+    .name
+        margin-left .5em
+        line-height 40px
+        font-weight bold
+        vertical-align middle
+
+    .cost
+        position absolute
+        top 4px
+        right 4px
+        font-size 10px
+        line-height 1em
+        font-weight 500
+        color #654
+        
+    .quantity
+        position absolute
+        bottom 3px
+        right 4px
+        font-size 10px
+        line-height 1em
+        font-weight 500
+        color #654

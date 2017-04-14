@@ -1,10 +1,11 @@
-import gulp from 'gulp';
-import inject from 'gulp-inject';
-import series from 'stream-series';
+'use strict';
 
-export default (config) => {
+const gulp = require('gulp');
+const inject = require('gulp-inject');
+const series = require('stream-series');
+
+module.exports = (config) => {
     return () => {
-
         let streams = config.sources
             .map(sources => {
                 return gulp.src(sources, {
@@ -13,10 +14,10 @@ export default (config) => {
                 });
             });
 
-        return gulp.src(config.file)
+        return gulp.src(config.input)
             .pipe(inject(series.apply(series, streams), {
                 addRootSlash: false
             }))
             .pipe(gulp.dest(config.output));
     }
-}
+};

@@ -1,0 +1,56 @@
+.su-masteries-talent-container
+    position absolute
+
+.su-masteries-talent
+    background-color #000
+    background-repeat no-repeat
+    border 2px solid #ccc
+    border-radius 5px
+    box-sizing content-box
+    cursor pointer
+    height 48px
+    position absolute
+    transform scale(1.05)
+    width 48px
+
+    .points
+        background #333
+        border 2px solid
+        border-radius 3px
+        bottom -5px
+        color #ccc
+        font-size 10px
+        line-height 14px
+        position absolute
+        padding 0 5px
+        transition .3s ease-in-out
+        right -5px
+        z-index 5
+
+    .bg
+        height 48px
+        width 48px
+        position absolute
+        transition .3s ease-in-out
+        border-radius 3px
+
+    &.unavailable
+        .bg
+            filter grayscale(1)
+            transition .3s ease-in-out
+
+        .points
+            opacity 0
+        
+    &.partial
+        border-color #3c3
+
+        .points
+            color #3c3
+
+    &.complete
+        border-color #cc3
+
+        .points, .talent-tooltip .rank
+            color #cc3
+

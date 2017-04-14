@@ -1,0 +1,9 @@
+.su-champions-card(ng-click="ctrl.select(champion)")
+    .su-champions-card-header
+        .icon(ng-style="champion|championIcon")
+        span.name {{ champion.name }}
+    .su-champions-card-body
+        .stats
+            .stat(ng-repeat="(key, stat) in champion|stats", ng-class="{ missing: !stat }")
+                .icon(ng-style="stat|statIcon")
+                .value {{ stat|statRange }}

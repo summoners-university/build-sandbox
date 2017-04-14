@@ -1,0 +1,63 @@
+.rune-tooltip
+    display none
+    pointer-events none
+    position absolute
+    left 54px
+    background #000
+    border-radius 5px
+    border 2px solid #666
+    white-space nowrap
+    text-align center
+    padding 5px
+    font-size 12px
+    z-index 10
+
+    .rune:hover &
+        display block
+
+    &.active
+        display block
+        position fixed
+
+    .tier
+        float left
+        color #f26900
+
+    .rank
+        float right
+        display none
+
+    > .name
+        margin 2em 1em 1em
+        clear both
+        font-size 14px
+        font-weight bold
+        display block
+        line-height 1
+
+    .description
+        margin 0 1em 1em
+        color #fff
+        
+    .cost
+        color #ddd
+        bottom 3px
+        right 5px
+        position absolute
+        line-height 1em
+        display none
+
+        .list-rune &
+            display inline-block
+
+    &.mark
+        color #E61919
+
+    &.seal
+        color #cdcd00
+
+    &.glyph
+        color #46a2ec
+
+    &.quintessence
+        color #9c50e7

@@ -1,0 +1,3 @@
+.su-stats-stat(ng-class="{ missing: !stat, touched: stat.touched }")
+    .icon(ng-style="stat | statIcon")
+    .value {{ stat | statValue }}

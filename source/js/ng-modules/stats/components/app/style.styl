@@ -1,0 +1,29 @@
+.su-stats-app
+    width 100%
+
+    h3
+        display block
+        
+    .dropdown
+        background #eee
+        display none
+        left .6em
+        position absolute
+        top calc(100% - .6em)
+        z-index 100
+
+        &.expanded
+            display block
+
+        &.dropdown-list
+            height 200px
+            overflow-y auto
+            width calc(100% - 1.2em)
+
+        .dropdown-list-item
+            color #999
+            display block
+            padding .5em
+
+            &:hover, &.active
+                color #333

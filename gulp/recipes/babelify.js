@@ -1,29 +1,7 @@
-import gulp from 'gulp';
-import gutil from 'gulp-util';
-import chalk from 'chalk';
-import browserify from 'browserify';
-import babelify from 'babelify';
-import source from 'vinyl-source-stream';
-
-function logError(err) {
-    if (err.fileName) {
-        // regular error
-        gutil.log(chalk.red(err.name)
-            + ': '
-            + chalk.yellow(err.fileName.replace(__dirname + '/src/js/', ''))
-            + ': '
-            + 'Line '
-            + chalk.magenta(err.lineNumber)
-            + ' & '
-            + 'Column '
-            + chalk.magenta(err.columnNumber || err.column)
-            + ': '
-            + chalk.blue(err.description))
-    } else {
-        // browserify error..
-        gutil.log(`${chalk.red(err.name)}: ${chalk.yellow(err.message)}`);
-    }
-}
+const gulp = require('gulp');
+const browserify = require('browserify');
+const babelify = require('babelify');
+const source = require('vinyl-source-stream');
 
 module.exports = function(config) {
     return () => {
@@ -31,6 +9,10 @@ module.exports = function(config) {
 
         if(config.transform) {
             b.transform(babelify.configure(config.transform));
+        }
+
+        if(config.presets || config.plugins) {
+            b.transform(babelify, { presets: config.presets, plugins: config.plugins });
         }
 
         if(config.require) {
@@ -43,7 +25,6 @@ module.exports = function(config) {
 
         return b
             .bundle()
-            .on('error', logError)
             .pipe(source(config.name))
             .pipe(gulp.dest(config.output));
     };

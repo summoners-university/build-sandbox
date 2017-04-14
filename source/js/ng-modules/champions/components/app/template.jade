@@ -1,0 +1,8 @@
+.su-champions-app.su-pane
+    .su-pane-header
+        span.su-pane-title Champions
+        ul.su-actions
+            li.su-action.danger(ng-click="ctrl.reset()"): i.reset Reset
+    .su-pane-body.empty
+        .vertical-scroll-container
+            su-champions-grid(champions="champions")

@@ -1,9 +1,11 @@
-import gulp from 'gulp';
-import path from 'path';
-import express from 'express';
-import morgan from 'morgan';
+'use strict';
 
-export default (config) => {
+const gulp = require('gulp');
+const path = require('path');
+const express = require('express');
+const morgan = require('morgan');
+
+module.exports = (config) => {
     return () => {
         let server = express();
 

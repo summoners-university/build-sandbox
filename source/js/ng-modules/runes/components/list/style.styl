@@ -1,0 +1,50 @@
+.su-runes-list
+    .vertical-scroll-container
+        flex-grow 1
+        overflox-x visible
+        overflow-y scroll
+
+    .rune-group
+        display block
+
+        .rune-group-header
+            background url(/images/runes/group-header.png) no-repeat left top
+            cursor pointer
+            display block
+            height 28px
+            width 100%
+
+            .rune-group-name
+                color #fff
+                font-weight 600
+                font-size 12px
+                line-height 28px
+                opacity .9
+                padding 0 2em
+
+                &.marks
+                    color #E61919
+
+                &.seals
+                    color #cdcd00
+
+                &.glyphs
+                    color #46a2ec
+
+                &.quintessences
+                    color #9c50e7
+
+            &:hover .rune-group-name
+                opacity 1
+
+        .rune-group-runes
+            display block
+            height 0
+            overflow hidden
+
+        &.expanded
+            .rune-group-header
+                background-position left bottom
+
+            .rune-group-runes
+                height auto

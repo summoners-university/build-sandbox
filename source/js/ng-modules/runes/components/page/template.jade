@@ -1,0 +1,10 @@
+.su-runes-page.su-pane
+    .su-pane-header
+        span.su-pane-title Runepage
+        ul.su-actions
+            li.su-action.danger(ng-click="ctrl.reset()"): i.reset Reset
+    .su-pane-body.empty
+        .runepage
+            .runes(ng-repeat="(type, runes) in ctrl.runes")
+                .rune(ng-repeat="rune in runes track by $index", ng-if="!!rune", ng-style="rune|runestyle:$index", class="{{ rune.type|lowercase }}", ng-click="ctrl.refund($event, rune, $index)")
+                    su-runes-tooltip(rune="rune")

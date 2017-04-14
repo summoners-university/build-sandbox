@@ -1,0 +1,7 @@
+.su-stats-stat-grid
+    .stats
+        su-stats-stat(ng-repeat="(key, stat) in ctrl.stats", stat="stat")
+
+//-        .stat(ng-repeat="(key, stat) in ctrl.stats", ng-class="{ missing: !stat, touched: stat.touched }")
+//-            .icon(ng-style="stat|statIcon")
+//-            .value {{ stat | statValue }}

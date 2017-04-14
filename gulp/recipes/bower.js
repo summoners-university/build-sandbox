@@ -1,9 +1,9 @@
-import gulp from 'gulp';
-import bower from 'main-bower-files';
+const gulp = require('gulp');
+const bower = require('main-bower-files');
 
-export default (config) => {
+module.exports = (config) => {
     return () => {
         return gulp.src(bower())
             .pipe(gulp.dest(config.output));
     }
-}
+};

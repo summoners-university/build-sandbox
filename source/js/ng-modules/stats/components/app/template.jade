@@ -1,0 +1,13 @@
+.su-stats-app.su-pane
+    .su-pane-header
+        span.su-pane-title Stats
+        ul.su-actions
+            li.su-action.arrow-after(ng-click="ctrl.levelDropdownExpanded = !ctrl.levelDropdownExpanded "): i.level Level {{ctrl.level}}
+                .dropdown.dropdown-list(ng-class="{ expanded: ctrl.levelDropdownExpanded, collapsed: !ctrl.levelDropdownExpanded }")
+                    .dropdown-list-item(ng-repeat="level in ctrl.levels", ng-click="ctrl.updateLevel(level)", ng-class="{ active: ctrl.level == level }") Level {{level}}
+        //span.su-pane-champion-level
+        //    | Level
+        //    select(ng-model="ctrl.level", ng-options="level for level in ctrl.levels track by level", ng-change="ctrl.updateLevel(ctrl.level)")
+    .su-pane-body.empty
+        su-stats-mod-list
+        su-stats-stat-grid

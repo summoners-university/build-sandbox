@@ -1,0 +1,8 @@
+.su-sandbox-tabs
+    ul.su-sandbox-tabs-list
+        li.su-sandbox-tab(ng-click="ctrl.select('champions')", ng-class="{ active: ctrl.tab == 'champions'}")
+            span.su-sandbox-tab-title Champions
+        li.su-sandbox-tab(ng-click="ctrl.select('runes')", ng-class="{ active: ctrl.tab == 'runes'}")
+            span.su-sandbox-tab-title Runes
+        li.su-sandbox-tab(ng-click="ctrl.select('masteries')", ng-class="{ active: ctrl.tab == 'masteries'}")
+            span.su-sandbox-tab-title Masteries

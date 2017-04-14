@@ -1,0 +1,7 @@
+.su-masteries-app.su-pane
+    .su-pane-header
+        span.su-pane-title Masteries
+        ul.su-actions
+            li.su-action.danger(ng-click="ctrl.reset()"): i.reset Reset
+    .su-pane-body.empty
+        su-masteries-tree(ng-repeat="tree in ctrl.masteries.trees track by $index", tree="tree")

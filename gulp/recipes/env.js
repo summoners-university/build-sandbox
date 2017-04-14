@@ -1,10 +1,12 @@
-import gulp from 'gulp';
-import env from 'gulp-env';
+const gulp = require('gulp');
+const env = require('gulp-env');
 
-export default (config) => {
+module.exports = function(config) {
     return () => {
-        env({
-            vars: config
+        return env({
+            vars: {
+                NODE_PATH: config.NODE_PATH
+            }
         })
-    }
-}
+    };
+};

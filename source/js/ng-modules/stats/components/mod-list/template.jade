@@ -1,0 +1,5 @@
+.su-stats-mod-list.scroll-fade-container
+    .mods.vertical-scroll-container
+        .mod(ng-repeat="mod in ctrl.mods")
+            .stat {{ mod | stat:'name' }}
+            .value {{ mod | stat:'value' }}

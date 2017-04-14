@@ -1,0 +1,54 @@
+.su-pane
+    border 1px solid #8e7f3f
+    display flex
+    flex-direction column
+
+    .su-pane-header
+        background-color #f0e4b1
+        background-image url(/images/common/pane-header-bg.jpg)
+        background-repeat no-repeat
+        background-position left center
+        border-bottom 1px solid #8e7f3f
+        box-sizing content-box
+        display block
+        position relative
+
+    .su-pane-title
+        color #bf110d
+        display block
+        font-weight 400
+        padding .75em
+
+    .su-pane-body
+        background #dbcb8c
+        display flex
+        flex-direction column
+        flex-grow 1
+        padding 5px
+
+        &.empty
+            background #736945
+            padding 0
+
+    @import 'actions'
+
+    .scroll-fade-container
+        display flex
+        overflow hidden
+        position relative
+        
+        &:after
+            box-shadow inset 0 -10px 10px -3px #dbcb8c, inset 0 10px 10px -3px #dbcb8c
+            content ''
+            height 100%
+            left 0
+            pointer-events none
+            position absolute
+            top 0
+            width 100%
+            z-index 10
+
+    .vertical-scroll-container
+        flex-grow 1
+        overflox-x visible
+        overflow-y scroll

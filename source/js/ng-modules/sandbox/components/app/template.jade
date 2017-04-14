@@ -1,0 +1,13 @@
+.su-sandbox-app
+    .su-sandbox-header
+        .su-sandbox-header-inner
+            su-sandbox-tabs
+            .su-sandbox-header-info
+                span.version Patch: {{ctrl.gameVersion}}
+    .su-sandbox-main
+        .su-sandbox-content-container
+            su-champions-app(ng-show="ctrl.tab == 'champions'")
+            su-runes-app(ng-show="ctrl.tab == 'runes'")
+            su-masteries-app(ng-show="ctrl.tab == 'masteries'")
+        .su-sandbox-stats-container
+            su-stats-app
