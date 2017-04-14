@@ -1,4 +1,9 @@
 
+.su-champions-app {
+  flex-grow: 1;
+  margin-right: 5px;
+}
+
 .su-champions-card {
   background: #736945;
   border: 1px solid #8e7f3f;
@@ -69,11 +74,6 @@
   line-height: 1;
   margin-top: -3px;
   text-indent: 2em;
-}
-
-.su-champions-app {
-  flex-grow: 1;
-  margin-right: 5px;
 }
 
 .su-champions-grid {
