@@ -1,0 +1,1 @@
+NODE_ENV=production PORT=3030 forever start node_modules/gulp/bin/gulp.js -o out.log -e err.log
