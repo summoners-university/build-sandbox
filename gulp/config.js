@@ -37,6 +37,7 @@ module.exports = function(TARGET_ENV) {
     ENV: TARGET_ENV,
     VERSION: pkg.version,
     PATCH: pkg.patch,
-    PORT: process.env.PORT || 3000
+    PORT: process.env.PORT || 3000,
+    REPO: pkg.repository.url
   };
 };

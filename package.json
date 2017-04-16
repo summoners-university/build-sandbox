@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "patch": "7.6.1",
   "description": "Client app for Summoner's University Sandbox",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/summoners-university/build-sandbox"
+  },
   "scripts": {
     "postinstall": "bower install",
     "build": "gulp compile",
