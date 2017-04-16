@@ -10,6 +10,18 @@ const EnvConfig = {
     staging: 'UA-97028744-3',
     alpha: 'UA-97028744-2',
     production: 'UA-97028744-1'
+  },
+  ISSUES: {
+    local: '#',
+    staging: '#',
+    alpha: 'https://goo.gl/forms/cZX8d2r8Y6JTNgE63',
+    prod: '#'
+  },
+  FEEDBACK: {
+    local: '#',
+    staging: '#',
+    alpha: 'https://goo.gl/forms/rwY5hkVw7FSH2DA62',
+    prod: '#'
   }
 };
 
@@ -20,6 +32,8 @@ module.exports = function(TARGET_ENV) {
     NODE_MODULES: ['angular', 'lodash', 'angular-sanitize', 'angular-raven'],
     GA: EnvConfig.GA[TARGET_ENV],
     SENTRY: EnvConfig.SENTRY[TARGET_ENV],
+    ISSUES: EnvConfig.ISSUES[TARGET_ENV],
+    FEEDBACK: EnvConfig.FEEDBACK[TARGET_ENV],
     ENV: TARGET_ENV,
     VERSION: pkg.version,
     PATCH: pkg.patch,

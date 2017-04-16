@@ -67,7 +67,9 @@ gulp.task('html', recipe('html', {
         ['@{SENTRY}', CONFIG.SENTRY],
         ['@{GA}', CONFIG.GA],
         ['@{VERSION}', CONFIG.VERSION],
-        ['@{ENV}', CONFIG.ENV]
+        ['@{ENV}', CONFIG.ENV],
+        ['@{ISSUES}', CONFIG.ISSUES],
+        ['@{FEEDBACK}', CONFIG.FEEDBACK],
     ]
 }));
 
