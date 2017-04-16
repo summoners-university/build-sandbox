@@ -20,8 +20,7 @@ export default /*@ngInject*/ function($scope, gridStatsFilter) {
             });
 
             fn.forEach(mods, (mod) => {
-                // let stat = fn.find(stats, (stat) => stat ? stat.id == mod.stat.id : null);
-                let stat = fn.find(stats, (stat) => stat.id == mod.stat.id);
+                let stat = fn.find(stats, (stat) => stat ? stat.id == mod.stat.id : null);
                 if(!stat) {
                     return;
                 }

@@ -188,6 +188,21 @@ body *:not(script) {
   padding: 0.5em;
   width: 100%;
 }
+.site-footer .site-footer-item {
+  font-size: 12px;
+  color: #ccc;
+  border-left: 1px solid #666;
+  padding: 6px 12px;
+}
+.site-footer .site-footer-item:first-child {
+  border: none;
+}
+.site-footer a {
+  text-decoration: underline;
+}
+.site-footer a:hover {
+  color: #eee;
+}
 .su-pane {
   border: 1px solid #8e7f3f;
   display: flex;

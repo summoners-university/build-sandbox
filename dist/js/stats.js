@@ -733,9 +733,8 @@ exports.default = /*@ngInject*/function ($scope, gridStatsFilter) {
             });
 
             _fnjs2.default.forEach(mods, function (mod) {
-                // let stat = fn.find(stats, (stat) => stat ? stat.id == mod.stat.id : null);
                 var stat = _fnjs2.default.find(stats, function (stat) {
-                    return stat.id == mod.stat.id;
+                    return stat ? stat.id == mod.stat.id : null;
                 });
                 if (!stat) {
                     return;
