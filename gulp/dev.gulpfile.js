@@ -70,6 +70,7 @@ gulp.task('html', recipe('html', {
         ['@{ENV}', CONFIG.ENV],
         ['@{ISSUES}', CONFIG.ISSUES],
         ['@{FEEDBACK}', CONFIG.FEEDBACK],
+        ['@{REPO}', CONFIG.REPO]
     ]
 }));
 
