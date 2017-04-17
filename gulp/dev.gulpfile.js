@@ -1,4 +1,4 @@
-const TARGET_ENV = process.env.TARGET_ENV;
+const TARGET_ENV = process.env.TARGET_ENV || 'local';
 
 const gulp = require('gulp');
 const path = require('path');

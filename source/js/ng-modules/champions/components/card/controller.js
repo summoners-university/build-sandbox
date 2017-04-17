@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import analytics, { EventCategories, EventActions } from 'services/analytics';
+import analytics, { EventCategories, EventActions, Dimensions } from 'services/analytics';
 
 export default /*@ngInject*/ function($rootScope, $scope) {
     _.extend(this, {
@@ -8,7 +8,9 @@ export default /*@ngInject*/ function($rootScope, $scope) {
             analytics.trackEvent({
                 category: EventCategories.CHAMPION,
                 action: EventActions.CLICK,
-                value: champion.id
+                dimensions: {
+                    [Dimensions.ITEM_ID]: champion.id
+                }
             });
         }
     });

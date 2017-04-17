@@ -1,6 +1,6 @@
 import fn from 'fnjs';
 import { Types as RuneTypes } from 'services/runes';
-import analytics, { EventCategories, EventActions, EventLabels } from 'services/analytics';
+import analytics, { EventCategories, EventActions, EventLabels, Dimensions } from 'services/analytics';
 
 function slotOpen(runes, rune) {
     let max = rune.type == RuneTypes.QUINT ? 3 : 9;
@@ -42,7 +42,9 @@ export default /*@ngInject*/ function($rootScope, $scope) {
                 category: EventCategories.RUNE,
                 action: EventActions.CLICK,
                 label: EventLabels.REMOVED,
-                value: rune.id
+                dimensions: {
+                    [Dimensions.ITEM_ID]: rune.id
+                }
             });
     
             $rootScope.$broadcast('rune.refunded', rune, count);
