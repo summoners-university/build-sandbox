@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import analytics, { EventCategories, EventActions, EventLabels } from 'services/analytics';
+import analytics, { EventCategories, EventActions, EventLabels, Dimensions } from 'services/analytics';
 
 export default /*@ngInject*/ function($rootScope, $scope) {
     _.extend(this, {
@@ -9,7 +9,9 @@ export default /*@ngInject*/ function($rootScope, $scope) {
                 category: EventCategories.RUNE,
                 action: EventActions.CLICK,
                 label: EventLabels.ADDED,
-                value: rune.id
+                dimensions: {
+                    [Dimensions.ITEM_ID]: rune.id
+                }
             });
         },
 

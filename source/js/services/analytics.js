@@ -8,11 +8,11 @@ const Pages = {
 const EventCategories = {
   CHAMPION: 'champion',
   RUNE: 'rune',
-  MASTERY: 'mastery',
+  MASTERY: 'mastery'
 };
 const EventActions = {
   CLICK: 'click',
-  SELECTED: 'selected',
+  SELECTED: 'selected'
 
 };
 const EventLabels = {
@@ -20,7 +20,11 @@ const EventLabels = {
   REMOVED: 'removed'
 };
 
-export { Pages, EventCategories, EventActions, EventLabels };
+const Dimensions = {
+  ITEM_ID: 'dimension0'
+};
+
+export { Pages, EventCategories, EventActions, EventLabels, Dimensions };
 export default {
 
   /**
@@ -43,14 +47,15 @@ export default {
    * @param {string} label - Typically a subcategory.
    * @param {number} value - A useful and unique identification of the thing interacted with.
    */
-  trackEvent({ category, action, label, value }) {
-    ga('send', Object.assign({
+  trackEvent({ category, action, label, value, dimensions }) {
+    let event = Object.assign({
       hitType: 'event'
     }, {
       eventCategory: category,
       eventAction: action,
       eventLabel: label,
       eventValue: value
-    }));
+    }, dimensions);
+    ga('send', event);
   }
 }

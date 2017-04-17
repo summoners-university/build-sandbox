@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import analytics, { EventCategories, EventActions, EventLabels } from 'services/analytics';
+import analytics, { EventCategories, EventActions, EventLabels, Dimensions } from 'services/analytics';
 
 export default /*@ngInject*/ function($scope) {
     _.extend(this, {
@@ -14,7 +14,9 @@ export default /*@ngInject*/ function($scope) {
                 category: EventCategories.MASTERY,
                 action: EventActions.CLICK,
                 label: EventLabels.ADDED,
-                value: mastery.id
+                dimensions: {
+                    [Dimensions.ITEM_ID]: mastery.id
+                }
             });
         },
 
@@ -27,7 +29,9 @@ export default /*@ngInject*/ function($scope) {
                 category: EventCategories.MASTERY,
                 action: EventActions.CLICK,
                 label: EventLabels.REMOVED,
-                value: mastery.id
+                dimensions: {
+                    [Dimensions.ITEM_ID]: mastery.id
+                }
             });
         }
     });
